@@ -1067,8 +1067,8 @@ textarea.input__body::-webkit-resizer {
 }
 
 .input_error .input__body {
-  color: var(--color-red);
-  border-color: var(--color-red);
+  color: var(--color-red) !important;
+  border-color: var(--color-red) !important;
 }
 
 .welcome__body {
@@ -1304,8 +1304,21 @@ textarea.input__body::-webkit-resizer {
 .s-3__link::after {
   content: "";
   position: absolute;
+  bottom: -1px;
+  left: 0;
   width: 100%;
+  height: 2px;
   background-color: var(--color-dark);
+  transition-duration: var(--transition-duration);
+  transition-property: opacity;
+}
+
+.s-3__link:focus-visible {
+  outline: none;
+}
+
+.s-3__link:focus-visible::after {
+  opacity: 0;
 }
 
 .s-3__list {
@@ -1654,6 +1667,10 @@ textarea.input__body::-webkit-resizer {
     align-items: flex-start;
   }
 
+  .form__text {
+    flex: 0 0 66%;
+  }
+
   .form__inputs {
     flex: 0 0 66%;
   }
@@ -1727,6 +1744,10 @@ textarea.input__body::-webkit-resizer {
   .col-2 {
     flex-shrink: 0;
     width: 55.4%;
+  }
+
+  .s-1__head {
+    align-items: center;
   }
 
   .s-1__img-box {
@@ -1958,6 +1979,10 @@ textarea.input__body::-webkit-resizer {
 
   .popup__close {
     border-radius: 48px;
+  }
+
+  .form__text {
+    font-size: 72px;
   }
 
   .form__inputs {
@@ -2585,6 +2610,10 @@ textarea.input__body::-webkit-resizer {
 }
 
 @media (max-width: 991.98px) {
+  .s-3__link::after {
+    height: 1px;
+  }
+
   .s-9__list {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -2903,6 +2932,10 @@ textarea.input__body::-webkit-resizer {
 
   .mobile-menu__link_cta {
     padding-left: 22px;
+  }
+
+  .form__text {
+    font-size: 26px;
   }
 
   .form__inputs {
@@ -3624,6 +3657,10 @@ textarea.input__body::-webkit-resizer {
     border-radius: clamp( 16px , 10.4653939782px  +  1.5374759769vw , 40px );
   }
 
+  .form__text {
+    font-size: clamp( 26px , 23.6939141576px  +  0.6406149904vw , 36px );
+  }
+
   .form__submit {
     margin-top: clamp( 18px , 11.0817424728px  +  1.9218449712vw , 48px );
   }
@@ -4309,6 +4346,10 @@ textarea.input__body::-webkit-resizer {
 
   .popup__close {
     border-radius: clamp( 40px , 31.9917457009px  +  0.4168837936vw , 48px );
+  }
+
+  .form__text {
+    font-size: clamp( 36px , -0.037144346px  +  1.8759770714vw , 72px );
   }
 
   .form__inputs {
@@ -5178,6 +5219,10 @@ textarea.input__body::-webkit-resizer {
   .case:not(:active):hover .case__img,
   .case:not(:active):hover .case__media {
     transform: scale(1.05);
+  }
+
+  .s-3__link:not(:active):hover::after {
+    opacity: 0;
   }
 
   .slider__item:not(:active):hover .slider__img {
