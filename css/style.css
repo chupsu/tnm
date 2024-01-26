@@ -3,8 +3,6 @@
 .popup__inner,
 .menu__body {
   overflow: auto;
-  scrollbar-color: var(--color-dark) var(--color-grey);
-  scrollbar-width: thin;
 }
 
 .popup__inner::-webkit-scrollbar,
@@ -21,6 +19,14 @@
 .popup__inner::-webkit-scrollbar-thumb,
 .menu__body::-webkit-scrollbar-thumb {
   background-color: var(--color-dark);
+}
+
+@-moz-document url-prefix()  {
+  .popup__inner,
+  .menu__body {
+    scrollbar-color: var(--color-dark) var(--color-light);
+    scrollbar-width: thin;
+  }
 }
 
 .welcome__title,
@@ -696,7 +702,9 @@ body * {
 
 .footer__btn {
   display: inline-block;
+  white-space: nowrap;
   font-weight: 600;
+  border: none;
   border-radius: 1000px;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -1661,6 +1669,51 @@ textarea.input__body::-webkit-resizer {
   margin-bottom: 0;
 }
 
+.not-found {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.not-found__body {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  max-width: 100%;
+}
+
+.not-found__text {
+  text-align: center;
+}
+
+.not-found__img-box {
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 340/270;
+}
+
+.not-found__img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: center;
+     object-position: center;
+}
+
+.not-found__btn {
+  display: inline-block;
+  text-align: center;
+  white-space: nowrap;
+  font-weight: 600;
+  color: var(--color-dark);
+  background-color: var(--color-accent);
+  border: none;
+  border-radius: 1000px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
 @media (min-width: 575.98px) {
   .form__main {
     display: flex;
@@ -1767,11 +1820,24 @@ textarea.input__body::-webkit-resizer {
   .s-8__desc {
     max-width: 77.4%;
   }
+
+  .not-found__text {
+    position: absolute;
+    text-align: left;
+  }
+
+  .not-found__btn {
+    position: absolute;
+    z-index: 1;
+    transform: rotate(31deg);
+    transform-origin: 0% 50%;
+  }
 }
 
 @media (min-width: 991.98px) {
   .form__submit {
     flex-direction: row-reverse;
+    justify-content: flex-end;
     align-items: center;
   }
 
@@ -2601,6 +2667,70 @@ textarea.input__body::-webkit-resizer {
   .article__body ul li::before {
     margin-left: 20px;
   }
+
+  .not-found {
+    padding-top: 228px;
+  }
+
+  .not-found {
+    padding-right: 100px;
+  }
+
+  .not-found {
+    padding-bottom: 40px;
+  }
+
+  .not-found {
+    padding-left: 100px;
+  }
+
+  .not-found__text {
+    bottom: 400px;
+  }
+
+  .not-found__text {
+    left: -120px;
+  }
+
+  .not-found__text {
+    max-width: 500px;
+  }
+
+  .not-found__text {
+    font-size: 40px;
+  }
+
+  .not-found__img-box {
+    width: 1720px;
+  }
+
+  .not-found__btn {
+    top: 320px;
+  }
+
+  .not-found__btn {
+    right: 40px;
+  }
+
+  .not-found__btn {
+    padding-top: 64px;
+  }
+
+  .not-found__btn {
+    padding-right: 120px;
+  }
+
+  .not-found__btn {
+    padding-bottom: 64px;
+  }
+
+  .not-found__btn {
+    padding-left: 120px;
+  }
+
+  .not-found__btn {
+    font-size: 36px;
+  }
 }
 
 @media (max-width: 1920.98px) {
@@ -2737,6 +2867,10 @@ textarea.input__body::-webkit-resizer {
   .s-9__title {
     line-height: 1;
   }
+
+  .not-found__btn {
+    min-width: 220px;
+  }
 }
 
 @media (max-width: 575.98px) {
@@ -2750,6 +2884,12 @@ textarea.input__body::-webkit-resizer {
 
   .s-9__list {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 479.98px) {
+  .not-found__btn {
+    align-self: stretch;
   }
 }
 
@@ -3542,6 +3682,54 @@ textarea.input__body::-webkit-resizer {
   .article__body ul li::before {
     margin-left: 16px;
   }
+
+  .not-found {
+    padding-top: 152px;
+  }
+
+  .not-found {
+    padding-right: 10px;
+  }
+
+  .not-found {
+    padding-bottom: 90px;
+  }
+
+  .not-found {
+    padding-left: 10px;
+  }
+
+  .not-found__text {
+    margin-bottom: 52px;
+  }
+
+  .not-found__text {
+    font-size: 16px;
+  }
+
+  .not-found__img-box {
+    width: 340px;
+  }
+
+  .not-found__btn {
+    padding-top: 16px;
+  }
+
+  .not-found__btn {
+    padding-right: 28px;
+  }
+
+  .not-found__btn {
+    padding-bottom: 16px;
+  }
+
+  .not-found__btn {
+    padding-left: 28px;
+  }
+
+  .not-found__btn {
+    font-size: 14px;
+  }
 }
 
 @media (min-width: 359.98px) and (max-width: 1920.98px) {
@@ -4208,6 +4396,50 @@ textarea.input__body::-webkit-resizer {
 
   .article__body ul li::before {
     margin-left: clamp( 10px , 17.3836515054px  +  -0.3843689942vw , 16px );
+  }
+
+  .not-found {
+    padding-top: clamp( 114px , 160.7631262012px  +  -2.4343369635vw , 152px );
+  }
+
+  .not-found {
+    padding-right: clamp( 10px , 0.7756566304px  +  2.5624599616vw , 50px );
+  }
+
+  .not-found {
+    padding-bottom: clamp( 20px , 106.1426008969px  +  -4.4843049327vw , 90px );
+  }
+
+  .not-found {
+    padding-left: clamp( 10px , 0.7756566304px  +  2.5624599616vw , 50px );
+  }
+
+  .not-found__text {
+    font-size: clamp( 16px , 15.077565663px  +  0.2562459962vw , 20px );
+  }
+
+  .not-found__img-box {
+    width: clamp( 340px , 220.0835361947px  +  33.3119795003vw , 860px );
+  }
+
+  .not-found__btn {
+    padding-top: clamp( 16px , 12.3102626521px  +  1.0249839846vw , 32px );
+  }
+
+  .not-found__btn {
+    padding-right: clamp( 28px , 20.6205253043px  +  2.0499679693vw , 60px );
+  }
+
+  .not-found__btn {
+    padding-bottom: clamp( 16px , 12.3102626521px  +  1.0249839846vw , 32px );
+  }
+
+  .not-found__btn {
+    padding-left: clamp( 28px , 20.6205253043px  +  2.0499679693vw , 60px );
+  }
+
+  .not-found__btn {
+    font-size: clamp( 14px , 13.077565663px  +  0.2562459962vw , 18px );
   }
 }
 
@@ -4968,6 +5200,70 @@ textarea.input__body::-webkit-resizer {
   .article__body ul li::before {
     margin-left: clamp( 10px , -0.0103178739px  +  0.5211047421vw , 20px );
   }
+
+  .not-found {
+    padding-top: clamp( 114px , -0.1176237624px  +  5.9405940594vw , 228px );
+  }
+
+  .not-found {
+    padding-right: clamp( 50px , -0.0515893695px  +  2.6055237103vw , 100px );
+  }
+
+  .not-found {
+    padding-bottom: clamp( 20px , -0.0206357478px  +  1.0422094841vw , 40px );
+  }
+
+  .not-found {
+    padding-left: clamp( 50px , -0.0515893695px  +  2.6055237103vw , 100px );
+  }
+
+  .not-found__text {
+    bottom: clamp( 200px , -0.2063574779px  +  10.4220948411vw , 400px );
+  }
+
+  .not-found__text {
+    left: clamp( -120px , 0.0619072434px  +  -3.1266284523vw , -60px );
+  }
+
+  .not-found__text {
+    max-width: clamp( 250px , -0.2579468473px  +  13.0276185513vw , 500px );
+  }
+
+  .not-found__text {
+    font-size: clamp( 20px , -0.0206357478px  +  1.0422094841vw , 40px );
+  }
+
+  .not-found__img-box {
+    width: clamp( 860px , -0.8873371548px  +  44.8150078166vw , 1720px );
+  }
+
+  .not-found__btn {
+    top: clamp( 160px , -0.1650859823px  +  8.3376758729vw , 320px );
+  }
+
+  .not-found__btn {
+    right: clamp( 20px , -0.0206357478px  +  1.0422094841vw , 40px );
+  }
+
+  .not-found__btn {
+    padding-top: clamp( 32px , -0.0330171965px  +  1.6675351746vw , 64px );
+  }
+
+  .not-found__btn {
+    padding-right: clamp( 60px , -0.0619072434px  +  3.1266284523vw , 120px );
+  }
+
+  .not-found__btn {
+    padding-bottom: clamp( 32px , -0.0330171965px  +  1.6675351746vw , 64px );
+  }
+
+  .not-found__btn {
+    padding-left: clamp( 60px , -0.0619072434px  +  3.1266284523vw , 120px );
+  }
+
+  .not-found__btn {
+    font-size: clamp( 18px , -0.018572173px  +  0.9379885357vw , 36px );
+  }
 }
 
 @media (min-width: 359.98px) and (max-width: 767.98px) {
@@ -5074,6 +5370,10 @@ textarea.input__body::-webkit-resizer {
   .s-8__text {
     margin-top: clamp( 44px , 29.8831372549px  +  3.9215686275vw , 60px );
   }
+
+  .not-found__text {
+    margin-bottom: clamp( 52px , 44.9415686275px  +  1.9607843137vw , 60px );
+  }
 }
 
 @media (min-width: 767.98px) and (max-width: 1920.98px) {
@@ -5119,6 +5419,26 @@ textarea.input__body::-webkit-resizer {
 
   .article__body {
     padding-top: clamp( 140px , 73.392888118px  +  8.6730268864vw , 240px );
+  }
+
+  .not-found__text {
+    bottom: clamp( 100px , 33.392888118px  +  8.6730268864vw , 200px );
+  }
+
+  .not-found__text {
+    left: clamp( -70px , -76.6607111882px  +  0.8673026886vw , -60px );
+  }
+
+  .not-found__text {
+    max-width: clamp( 220px , 200.0178664354px  +  2.6019080659vw , 250px );
+  }
+
+  .not-found__btn {
+    top: clamp( 78px , 23.3821682567px  +  7.1118820468vw , 160px );
+  }
+
+  .not-found__btn {
+    right: clamp( -24px , -53.3071292281px  +  3.81613183vw , 20px );
   }
 }
 
